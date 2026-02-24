@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import sqlite3
 import os
-DB_PATH = os.path.join(os.path.dirname(__file__), "contacts.db")
+DB_PATH = os.path.join(os.getcwd(), "contacts.db")
 app = Flask(__name__, 
             template_folder="../templates", 
             static_folder="../static")
@@ -24,10 +24,13 @@ def contact_page():
 @app.route("/contact", methods=["POST"])
 def contact():
     try:
-        data = request.json
+        data = request.get_json()
 
-        conn = sqlite3.connect(DB_PATH)
-        c = conn.cursor()
+        if not data:
+            return jsonify({"message": "Invalid data"}), 400
+
+        with sqlite3.connect(DB_PATH) as conn:
+            c = conn.cursor()
 
         c.execute("""
             INSERT INTO contacts (name, email, phone, company, message)
@@ -40,13 +43,15 @@ def contact():
         return jsonify({"message": "Request sent successfully!"})
 
     except Exception as e:
-        print("ERROR:", e)   # 👈 IMPORTANT
+        import traceback
+        print("ERROR:", str(e))
+        print(traceback.format_exc())  # 🔥 full error log
         return jsonify({"message": "Server error"}), 500
         
 # ---------- ADMIN PAGE ----------
 @app.route("/admin")
 def admin():
-    conn = sqlite3.connect("contacts.db")
+    conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     c.execute("SELECT * FROM contacts ORDER BY id DESC")
@@ -60,7 +65,7 @@ def admin():
 # ---------- DELETE REQUEST ----------
 @app.route("/delete/<int:id>", methods=["POST"])
 def delete_contact(id):
-    conn = sqlite3.connect("contacts.db")
+    conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     c.execute("DELETE FROM contacts WHERE id=?", (id,))
@@ -71,7 +76,7 @@ def delete_contact(id):
 
 # ---------- DB INIT ----------
 def init_db():
-    conn = sqlite3.connect("contacts.db")
+    conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     c.execute("""
