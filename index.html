@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Genovia — Home</title>
+
+  <!-- Google Fonts (heading + body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Genovia Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+         <a href="#start" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            Your Vision.<br />
+            Our Expertise.
+          </h1>
+          <p class="hero-sub">
+            From concept to company. One team. We transform your vision into a thriving business with expert guidance and comprehensive support.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#start" class="btn btn-primary">Launch My Startup →</a>
+            <a href="#packages" class="btn btn-outline">View Our Packages</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- Replace hero.jpg with exact exported artboard from Figma -->
+          <img src="assets/hero.png" alt="Hero Image" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- small arrow button -->
+    <div class="scroll-arrow" title="Scroll">
+      <button class="circle-btn" id="arrow-scroll">→</button>
+    </div>
+
+    <!-- The Startup Challenge -->
+    <section id="about" class="challenge">
+      <div class="container">
+        <h2 class="section-title centered">The Startup Challenge</h2>
+        <p class="lead centered">Entrepreneurs juggle multiple vendors, timelines, and budgets just to get their startup off the ground. We provide the all-in-one solution.</p>
+
+        <div class="split-card">
+          <div class="card dark">
+            <h3 class="card-head">⚠️ Your Problem</h3>
+            <div class="problem-grid">
+              <div class="pill">Legal Firms</div>
+              <div class="pill">Web Developers</div>
+              <div class="pill">Marketing</div>
+              <div class="pill">Business Services</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Multiple vendors to manage</li>
+              <li>Inconsistent communication</li>
+              <li>Budget overruns & hidden costs</li>
+              <li>Delayed launches</li>
+            </ul>
+          </div>
+
+          <div class="card light">
+            <h3 class="card-head">✔️ Our Solution</h3>
+            <div class="solution-center">
+              <img src="assets/solution.png" alt="Solution Logo" class="solution-img">
+            </div>
+            <ul class="bullet-list">
+              <li>Single point of contact</li>
+              <li>Coordinated timeline</li>
+              <li>Transparent pricing</li>
+              <li>Faster launch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title centered">Our Core Services</h2>
+        <p class="lead centered">Comprehensive solutions to help your startup succeed at every stage of your journey</p>
+
+        <div class="card-grid three">
+          <article class="service-card hover-scale">
+            <div class="badge">⚖️</div>
+            <h4>Legal & Compliance</h4>
+            <p>Navigate complex regulations and protect your business with comprehensive legal support and compliance frameworks.</p>
+            <ul class="service-list">
+              <li>Business Formation & Structure</li>
+              <li>Contract Review & Drafting</li>
+              <li>Regulatory Compliance</li>
+              <li>Intellectual Property Protection</li>
+              <li>Employment Law Guidance</li>
+            </ul>
+            <a class="learn-more">Learn More →</a>
+          </article>
+
+          <article class="service-card hover-scale">
+            <div class="badge">🌐</div>
+            <h4>Digital Presence</h4>
+            <p>Build a powerful online presence that attracts customers and establishes your brand in the digital marketplace.</p>
+            <ul class="service-list">
+              <li>Website Design & Development</li>
+              <li>Search Engine Optimization</li>
+              <li>Brand Identity & Design</li>
+              <li>Social Media Strategy</li>
+              <li>Content Marketing</li>
+            </ul>
+            <a class="learn-more">Learn More →</a>
+          </article>
+
+          <article class="service-card hover-scale">
+            <div class="badge">📈</div>
+            <h4>Growth & Maintenance</h4>
+            <p>Scale your business sustainably with ongoing support, optimization, and strategic growth initiatives.</p>
+            <ul class="service-list">
+              <li>Performance Analytics</li>
+              <li>Business Process Optimization</li>
+              <li>Marketing Automation</li>
+              <li>Customer Retention Strategies</li>
+              <li>Technical Support & Updates</li>
+            </ul>
+            <a class="learn-more">Learn More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section id="why" class="why">
+      <div class="container">
+        <h2 class="section-title centered">Why Choose Genovia?</h2>
+        <p class="lead centered">We're not just another service provider. We're your dedicated partner in building a successful startup from the ground up.</p>
+
+        <div class="feature-grid">
+          <div class="feature-card hover-raise">
+            <h4>All-in-One Solution</h4>
+            <p>Everything you need in one place - no need to juggle multiple vendors or platforms.</p>
+          </div>
+          <div class="feature-card hover-raise">
+            <h4>Expert Team</h4>
+            <p>Dedicated specialists in legal, digital, and marketing - all working for your success.</p>
+          </div>
+          <div class="feature-card hover-raise">
+            <h4>Time & Cost Savings</h4>
+            <p>Get to market 3x faster and save up to 60% compared to traditional approaches.</p>
+          </div>
+           <div class="feature-card hover-raise">
+            <h4>Ongoing Support</h4>
+            <p>We're with you beyond launch — continuous support and maintenance as your business grows.</p>
+          </div>
+
+          <!-- NEW card #5 -->
+          <div class="feature-card hover-raise">
+            <h4>Transparent Pricing</h4>
+            <p>Clear, upfront pricing with no hidden fees, so you always know what to expect.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="start" class="how">
+      <div class="container">
+        <h2 class="section-title centered">How It Works</h2>
+        <p class="lead centered">Get your startup launched in 3 simple steps</p>
+
+        <div class="steps-grid">
+          <div class="step-card hover-scale">
+            <div class="step-badge">1</div>
+            <h4>Discovery Call</h4>
+            <p>15-30 minute consultation to understand your vision, goals, and specific business needs.</p>
+          </div>
+
+          <div class="step-card hover-scale">
+            <div class="step-badge">2</div>
+            <h4>Choose Your Package</h4>
+            <p>Select from our Starter, Growth, or Custom plans designed to fit your budget and requirements.</p>
+          </div>
+
+          <div class="step-card hover-scale">
+            <div class="step-badge">3</div>
+            <h4>Launch & Setup</h4>
+            <p>We handle everything - legal structure, digital presence, marketing foundation, and more.</p>
+          </div>
+
+          <div class="step-card hover-scale">
+            <div class="step-badge">4</div>
+            <h4>Ongoing Support</h4>
+            <p>Continuous maintenance, growth assistance, and expert guidance as your business scales.</p>
+          </div>
+        </div>
+
+        <div class="centered">
+          <div class="start-journey-wrap"></div>
+          <button class="btn btn-primary large">Start Your Journey</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2 class="section-title centered">Frequently Asked Questions</h2>
+        <p class="lead centered">Everything you need to know about launching with Genovia</p>
+
+        <div class="faq-list">
+          <!-- Each item leaves an empty .answer div for you to fill later -->
+          <div class="faq-item">
+            <button class="faq-q">How long does the company registration process take? <span class="plus">+</span></button>
+            <div class="answer">Our streamlined process typically takes 5-7 business days for complete company registration. This includes filing with state authorities, obtaining your EIN, and setting up your business banking requirements. We handle all paperwork and follow-ups, so you can focus on building your business while we take care of the legal foundation.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Do you handle ongoing compliance requirements? <span class="plus">+</span></button>
+            <div class="answer">Our streamlined process typically takes 5-7 business days for complete company registration. This includes filing with state authorities, obtaining your EIN, and setting up your business banking requirements. We handle all paperwork and follow-ups, so you can focus on building your business while we take care of the legal foundation.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Can I customize my package? <span class="plus">+</span></button>
+            <div class="answer">Our streamlined process typically takes 5-7 business days for complete company registration. This includes filing with state authorities, obtaining your EIN, and setting up your business banking requirements. We handle all paperwork and follow-ups, so you can focus on building your business while we take care of the legal foundation.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">What if I am not satisfied? <span class="plus">+</span></button>
+            <div class="answer">Our streamlined process typically takes 5-7 business days for complete company registration. This includes filing with state authorities, obtaining your EIN, and setting up your business banking requirements. We handle all paperwork and follow-ups, so you can focus on building your business while we take care of the legal foundation.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">How do you ensure my information is secure? <span class="plus">+</span></button>
+            <div class="answer">Our streamlined process typically takes 5-7 business days for complete company registration. This includes filing with state authorities, obtaining your EIN, and setting up your business banking requirements. We handle all paperwork and follow-ups, so you can focus on building your business while we take care of the legal foundation.</div>
+          </div>
+        </div>
+
+        <div class="centered card-cta">
+          <a href="#contact" class="btn btn-primary large">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="col">
+          <h4>Company</h4>
+          <p>Building innovative solutions that drive business growth and transform digital experiences for our clients worldwide.</p>
+        </div>
+
+        <div class="col">
+          <h4>Quick Links</h4>
+          <ul class="plain-list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact Info</h4>
+          <p>Mumbai<br/>+91 810499999<br/>genovia29@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
