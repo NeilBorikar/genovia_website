@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Same global stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
@@ -18,18 +18,18 @@
     <div class="container nav-inner">
 
       <div class="logo">
-        <img src="assets/logo.png" alt="Genovia Logo" class="logo-img">
+        <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
         
       </div>
 
       <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact-page">Contact Us</a>
       </nav>
 
       <div class="actions">
-        <a href="index.html#start" class="btn btn-pill btn-primary">Get Started</a>
+        <a href="/contact-page" class="btn btn-pill btn-primary">Get Started</a>
       </div>
 
     </div>
@@ -103,6 +103,6 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

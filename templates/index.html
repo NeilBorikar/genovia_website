@@ -8,19 +8,19 @@
   <!-- Google Fonts (heading + body) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <!-- NAV -->
   <header class="site-header">
     <div class="container nav-inner">
       <div class="logo">
-        <img src="assets/logo.png" alt="Genovia Logo" class="logo-img">
+         <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
       </div>
       <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact-page" class="nav-link">Contact</a>
       </nav>
       <div class="actions">
          <a href="#start" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
@@ -49,7 +49,7 @@
 
         <div class="hero-right">
           <!-- Replace hero.jpg with exact exported artboard from Figma -->
-          <img src="assets/hero.png" alt="Hero Image" class="hero-img">
+          <img src="{{ url_for('static', filename='assets/hero.png') }}" alt="Hero Image" class="hero-img">
         </div>
       </div>
     </section>
@@ -85,7 +85,7 @@
           <div class="card light">
             <h3 class="card-head">✔️ Our Solution</h3>
             <div class="solution-center">
-              <img src="assets/solution.png" alt="Solution Logo" class="solution-img">
+             <img src="{{ url_for('static', filename='assets/solution.png') }}" alt="Solution Logo" class="solution-img">
             </div>
             <ul class="bullet-list">
               <li>Single point of contact</li>
@@ -258,7 +258,7 @@
         </div>
 
         <div class="centered card-cta">
-          <a href="#contact" class="btn btn-primary large">Contact Our Team</a>
+          <a href="/contact-page" class="btn btn-primary large">Contact Our Team</a>
         </div>
       </div>
     </section>
@@ -274,8 +274,9 @@
         <div class="col">
           <h4>Quick Links</h4>
           <ul class="plain-list">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="/about">About Us</a></li>
+
+            <li><a href="/contact-page">Contact Us</a></li>
           </ul>
         </div>
 
@@ -287,6 +288,6 @@
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

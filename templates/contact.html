@@ -199,48 +199,23 @@
 
 </style>
 </head>
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(e){
-  e.preventDefault();
 
-  const data = {
-    name: document.querySelectorAll(".input")[0].value,
-    email: document.querySelectorAll(".input")[1].value,
-    phone: document.querySelectorAll(".input")[2].value,
-    company: document.querySelectorAll(".input")[3].value,
-    message: document.querySelector("textarea").value
-  };
-
-  const res = await fetch("http://127.0.0.1:5000/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
-
-  const result = await res.json();
-  alert(result.message);
-
-  this.reset();
-});
-</script>
 <body>
 <div class="page">
 
   <!-- HEADER -->
   <header>
     <div class="logo">
-        <img src="assets/logo.png" alt="Genovia Logo" class="logo-img">
+        <img src="{{ url_for('static', filename='assets/logo.png') }}" class="logo-img">
       </div>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact-page">Contact</a>
     </nav>
 
-    <a class="cta" href="#">Get Started</a>
+    <a class="cta" href="/contact-page">Get Started</a>
   </header>
 
   <!-- MAIN -->
@@ -333,5 +308,31 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
   </div>
 </div>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const data = {
+    name: document.querySelectorAll(".input")[0].value,
+    email: document.querySelectorAll(".input")[1].value,
+    phone: document.querySelectorAll(".input")[2].value,
+    company: document.querySelectorAll(".input")[3].value,
+    message: document.querySelector("textarea").value
+  };
+
+  const res = await fetch("/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+  alert(result.message);
+
+  this.reset();
+});
+</script>
 </body>
 </html>
