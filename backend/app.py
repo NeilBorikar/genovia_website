@@ -26,7 +26,7 @@ def contact():
     try:
         data = request.json
 
-        conn = sqlite3.connect("contacts.db")
+        conn = sqlite3.connect(DB_PATH)
         c = conn.cursor()
 
         c.execute("""
@@ -43,7 +43,31 @@ def contact():
         print("ERROR:", e)   # 👈 IMPORTANT
         return jsonify({"message": "Server error"}), 500
         
+# ---------- ADMIN PAGE ----------
+@app.route("/admin")
+def admin():
+    conn = sqlite3.connect("contacts.db")
+    c = conn.cursor()
 
+    c.execute("SELECT * FROM contacts ORDER BY id DESC")
+    data = c.fetchall()
+
+    conn.close()
+
+    return render_template("admin.html", contacts=data)
+
+
+# ---------- DELETE REQUEST ----------
+@app.route("/delete/<int:id>", methods=["POST"])
+def delete_contact(id):
+    conn = sqlite3.connect("contacts.db")
+    c = conn.cursor()
+
+    c.execute("DELETE FROM contacts WHERE id=?", (id,))
+    conn.commit()
+    conn.close()
+
+    return jsonify({"message": "Deleted successfully"})
 
 # ---------- DB INIT ----------
 def init_db():
