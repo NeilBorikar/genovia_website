@@ -320,18 +320,29 @@ document.getElementById("contactForm").addEventListener("submit", async function
     message: document.querySelector("textarea").value
   };
 
-  const res = await fetch("/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
+  try {
+    const res = await fetch("/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
 
-  const result = await res.json();
-  alert(result.message);
+    if (!res.ok) {
+      throw new Error("Server error");
+    }
 
-  this.reset();
+    const result = await res.json();
+
+    alert(result.message || "Message sent!");
+
+    this.reset();
+
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong. Try again.");
+  }
 });
 </script>
 </body>

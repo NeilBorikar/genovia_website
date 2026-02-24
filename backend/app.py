@@ -24,21 +24,15 @@ def contact_page():
 @app.route("/contact", methods=["POST"])
 def contact():
     try:
-        data = request.get_json()
+        data = request.json
 
-        conn =sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect("contacts.db")
         c = conn.cursor()
 
         c.execute("""
             INSERT INTO contacts (name, email, phone, company, message)
             VALUES (?, ?, ?, ?, ?)
-        """, (
-            data.get("name"),
-            data.get("email"),
-            data.get("phone"),
-            data.get("company"),
-            data.get("message")
-        ))
+        """, (data["name"], data["email"], data["phone"], data["company"], data["message"]))
 
         conn.commit()
         conn.close()
@@ -46,7 +40,9 @@ def contact():
         return jsonify({"message": "Request sent successfully!"})
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        print("ERROR:", e)   # 👈 IMPORTANT
+        return jsonify({"message": "Server error"}), 500
+        
 
 
 # ---------- DB INIT ----------
