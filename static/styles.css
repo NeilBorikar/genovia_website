@@ -12,6 +12,100 @@
   --container: 1180px;
 }
 
+/* Dark Mode Variables */
+body.dark-mode {
+  --bg: #121212;         /* dark background */
+  --card: #1e1e1e;       /* dark card background */
+  --muted: #a0a0a0;      /* light grey text */
+  --accent: #ffffff;     /* white text */
+  --soft-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  --strong-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .site-header {
+  background: rgba(18,18,18,0.95);
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .btn-outline {
+  border-color: rgba(255,255,255,0.2);
+  color: #ffffff;
+}
+
+body.dark-mode .card.light {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .service-card {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .service-card .badge {
+  background: #2a2a2a;
+}
+
+body.dark-mode .feature-card {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .step-card {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .faq-q {
+  background: #1e1e1e;
+  border-color: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+body.dark-mode .faq-q .plus {
+  color: #ffffff;
+}
+
+body.dark-mode .answer {
+  color: #a0a0a0;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.dark-mode-toggle.dark {
+  color: #ffd700;
+}
+
+.dark-mode-toggle.light {
+  color: #333;
+}
+
 /* reset */
 *{box-sizing:border-box}
 html,body{height:100%}

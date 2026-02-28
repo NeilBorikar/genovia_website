@@ -1,6 +1,33 @@
 // script.js — smooth scroll, arrow button, faq toggle, small nav highlight
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Dark Mode Toggle
+  const darkModeBtn = document.getElementById('dark-mode-btn');
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+    darkModeBtn.classList.remove('light');
+    darkModeBtn.classList.add('dark');
+    darkModeBtn.textContent = '☀️';
+  }
+  
+  darkModeBtn.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+    
+    if (isDark) {
+      darkModeBtn.classList.remove('light');
+      darkModeBtn.classList.add('dark');
+      darkModeBtn.textContent = '☀️';
+    } else {
+      darkModeBtn.classList.remove('dark');
+      darkModeBtn.classList.add('light');
+      darkModeBtn.textContent = '🌙';
+    }
+  });
+  
   // Smooth scroll for nav and CTAs
   document.querySelectorAll('a[href^="#"], button[data-scroll-target]').forEach(function (el) {
     el.addEventListener('click', function (e) {
