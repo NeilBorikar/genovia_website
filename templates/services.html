@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Genovia — Services</title>
+
+  <!-- Google Fonts (heading + body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo">
+         <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-link dropdown-toggle">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/seo" class="dropdown-item">SEO Services</a>
+            <a href="/services/paid-advertising" class="dropdown-item">Paid Advertising</a>
+            <a href="/services/social-media-marketing" class="dropdown-item">Social Media Marketing</a>
+            <a href="/services/content-marketing" class="dropdown-item">Content Marketing</a>
+            <a href="/services/influencer-marketing" class="dropdown-item">Influencer Marketing</a>
+            <a href="/services/email-marketing" class="dropdown-item">Email Marketing</a>
+            <a href="/services/branding" class="dropdown-item">Branding</a>
+            <a href="/services/website-development" class="dropdown-item">Website Development</a>
+            <a href="/services/conversion-rate-optimization" class="dropdown-item">Conversion Rate Optimization</a>
+            <a href="/services/marketing-strategy-consulting" class="dropdown-item">Marketing Strategy & Consulting</a>
+          </div>
+        </div>
+        <a href="/contact-page" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+         <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
+         <a href="#start" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES PAGE -->
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Our Services</h1>
+        <p class="page-subtitle">We offer comprehensive digital marketing and digital growth services to help your business succeed in the online landscape.</p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-page">
+      <div class="container">
+        <div class="services-grid">
+          
+          <!-- SEO Services -->
+          <a href="/services/seo" class="service-item-link">
+            <article id="seo-services" class="service-item hover-scale">
+              <div class="service-icon">🔍</div>
+              <h3>SEO Services</h3>
+              <p>Search engine optimization strategies to improve website visibility in search results.</p>
+            </article>
+          </a>
+
+          <!-- Paid Advertising -->
+          <a href="/services/paid-advertising" class="service-item-link">
+            <article id="paid-advertising" class="service-item hover-scale">
+              <div class="service-icon">📊</div>
+              <h3>Paid Advertising</h3>
+              <p>Management of paid marketing campaigns across platforms such as Google Ads and social media.</p>
+            </article>
+          </a>
+
+          <!-- Social Media Marketing -->
+          <a href="/services/social-media-marketing" class="service-item-link">
+            <article id="social-media-marketing" class="service-item hover-scale">
+              <div class="service-icon">📱</div>
+              <h3>Social Media Marketing</h3>
+              <p>Planning and management of brand communication and engagement across social media platforms.</p>
+            </article>
+          </a>
+
+          <!-- Content Marketing -->
+          <a href="/services/content-marketing" class="service-item-link">
+            <article id="content-marketing" class="service-item hover-scale">
+              <div class="service-icon">📝</div>
+              <h3>Content Marketing</h3>
+              <p>Creation and distribution of content designed to inform audiences and support marketing strategies.</p>
+            </article>
+          </a>
+
+          <!-- Influencer Marketing -->
+          <a href="/services/influencer-marketing" class="service-item-link">
+            <article id="influencer-marketing" class="service-item hover-scale">
+              <div class="service-icon">👥</div>
+              <h3>Influencer Marketing</h3>
+              <p>Collaboration with content creators to reach targeted audiences.</p>
+            </article>
+          </a>
+
+          <!-- Email Marketing -->
+          <a href="/services/email-marketing" class="service-item-link">
+            <article id="email-marketing" class="service-item hover-scale">
+              <div class="service-icon">📧</div>
+              <h3>Email Marketing</h3>
+              <p>Email campaign planning, automation, and communication strategies.</p>
+            </article>
+          </a>
+
+          <!-- Branding -->
+          <a href="/services/branding" class="service-item-link">
+            <article id="branding" class="service-item hover-scale">
+              <div class="service-icon">🎨</div>
+              <h3>Branding</h3>
+              <p>Development of brand identity including messaging and visual direction.</p>
+            </article>
+          </a>
+
+          <!-- Website Development -->
+          <a href="/services/website-development" class="service-item-link">
+            <article id="website-development" class="service-item hover-scale">
+              <div class="service-icon">💻</div>
+              <h3>Website Development</h3>
+              <p>Design and development of websites focused on usability and performance.</p>
+            </article>
+          </a>
+
+          <!-- Conversion Rate Optimization -->
+          <a href="/services/conversion-rate-optimization" class="service-item-link">
+            <article id="conversion-rate-optimization" class="service-item hover-scale">
+              <div class="service-icon">📈</div>
+              <h3>CRO Optimization</h3>
+              <p>Improving website experiences to increase user actions such as sign-ups or purchases.</p>
+            </article>
+          </a>
+
+          <!-- Marketing Strategy & Consulting -->
+          <a href="/services/marketing-strategy-consulting" class="service-item-link">
+            <article id="marketing-strategy" class="service-item hover-scale">
+              <div class="service-icon">💡</div>
+              <h3>Marketing Strategy & Consulting</h3>
+              <p>Research, planning, and consulting services to guide digital growth strategies.</p>
+            </article>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="col">
+          <h4>Company</h4>
+          <p>Building innovative solutions that drive business growth and transform digital experiences for our clients worldwide.</p>
+        </div>
+
+        <div class="col">
+          <h4>Quick Links</h4>
+          <ul class="plain-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-page">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact Info</h4>
+          <p>Mumbai<br/>+91 810499999<br/>genovia29@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Genovia — SEO Services</title>
+
+  <!-- Google Fonts (heading + body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo">
+         <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-link dropdown-toggle">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/seo" class="dropdown-item">SEO Services</a>
+            <a href="/services/paid-advertising" class="dropdown-item">Paid Advertising</a>
+            <a href="/services/social-media-marketing" class="dropdown-item">Social Media Marketing</a>
+            <a href="/services/content-marketing" class="dropdown-item">Content Marketing</a>
+            <a href="/services/influencer-marketing" class="dropdown-item">Influencer Marketing</a>
+            <a href="/services/email-marketing" class="dropdown-item">Email Marketing</a>
+            <a href="/services/branding" class="dropdown-item">Branding</a>
+            <a href="/services/website-development" class="dropdown-item">Website Development</a>
+            <a href="/services/conversion-rate-optimization" class="dropdown-item">Conversion Rate Optimization</a>
+            <a href="/services/marketing-strategy-consulting" class="dropdown-item">Marketing Strategy & Consulting</a>
+          </div>
+        </div>
+        <a href="/contact-page" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+         <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
+         <a href="#start" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL PAGE -->
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">SEO Services</h1>
+        <p class="page-subtitle">Search engine optimization strategies to improve website visibility in search results and drive organic traffic to your business.</p>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="card">
+          <h2>What SEO Involves</h2>
+          <p>Search Engine Optimization (SEO) is the process of optimizing your website to rank higher in search engine results pages. SEO helps businesses increase their online visibility, attract more qualified traffic, and build credibility with search engines and users alike. Our comprehensive SEO approach focuses on both technical excellence and content quality to deliver sustainable results.</p>
+          <p>Businesses use SEO to establish authority in their industry, reach customers actively searching for their products or services, and achieve long-term growth without relying solely on paid advertising. Effective SEO strategies adapt to search engine algorithm updates and changing user behaviors to maintain and improve rankings over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What the Service Includes -->
+    <section class="service-includes">
+      <div class="container">
+        <h2 class="section-title centered">What the Service Includes</h2>
+        <div class="includes-grid">
+          <div class="include-item">
+            <h3>Technical SEO</h3>
+            <p>Website architecture optimization, site speed improvements, mobile responsiveness, crawlability enhancements, and technical audits to ensure search engines can effectively index your content.</p>
+          </div>
+          <div class="include-item">
+            <h3>On-page SEO</h3>
+            <p>Content optimization, meta tags, header tags, internal linking, keyword optimization, and user experience improvements to enhance relevance and readability.</p>
+          </div>
+          <div class="include-item">
+            <h3>Off-page SEO</h3>
+            <p>Link building strategies, brand mentions, social signals, and authority-building activities to establish your website's credibility and domain authority.</p>
+          </div>
+          <div class="include-item">
+            <h3>Local SEO</h3>
+            <p>Google Business Profile optimization, local citations, location-based keyword targeting, and local search ranking factors to attract nearby customers.</p>
+          </div>
+          <div class="include-item">
+            <h3>SEO Audits</h3>
+            <p>Comprehensive website analysis, competitor research, technical issue identification, and actionable recommendations for improvement.</p>
+          </div>
+          <div class="include-item">
+            <h3>Keyword Research</h3>
+            <p>Market analysis, search intent evaluation, long-tail keyword identification, and competitive keyword gap analysis to target valuable search terms.</p>
+          </div>
+          <div class="include-item">
+            <h3>Link Building</h3>
+            <p>Quality backlink acquisition, relationship building with relevant websites, content promotion, and digital PR to improve domain authority.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="col">
+          <h4>Company</h4>
+          <p>Building innovative solutions that drive business growth and transform digital experiences for our clients worldwide.</p>
+        </div>
+
+        <div class="col">
+          <h4>Quick Links</h4>
+          <ul class="plain-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-page">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact Info</h4>
+          <p>Mumbai<br/>+91 810499999<br/>genovia29@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

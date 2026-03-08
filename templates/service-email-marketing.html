@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Genovia — Email Marketing</title>
+
+  <!-- Google Fonts (heading + body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo">
+         <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-link dropdown-toggle">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/seo" class="dropdown-item">SEO Services</a>
+            <a href="/services/paid-advertising" class="dropdown-item">Paid Advertising</a>
+            <a href="/services/social-media-marketing" class="dropdown-item">Social Media Marketing</a>
+            <a href="/services/content-marketing" class="dropdown-item">Content Marketing</a>
+            <a href="/services/influencer-marketing" class="dropdown-item">Influencer Marketing</a>
+            <a href="/services/email-marketing" class="dropdown-item">Email Marketing</a>
+            <a href="/services/branding" class="dropdown-item">Branding</a>
+            <a href="/services/website-development" class="dropdown-item">Website Development</a>
+            <a href="/services/conversion-rate-optimization" class="dropdown-item">Conversion Rate Optimization</a>
+            <a href="/services/marketing-strategy-consulting" class="dropdown-item">Marketing Strategy & Consulting</a>
+          </div>
+        </div>
+        <a href="/contact-page" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+         <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
+         <a href="#start" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL PAGE -->
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Email Marketing</h1>
+        <p class="page-subtitle">Email campaign planning, automation, and communication strategies to nurture leads and maintain customer relationships.</p>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="card">
+          <h2>What Email Marketing Involves</h2>
+          <p>Email Marketing involves creating and sending targeted messages to subscribers and customers to build relationships, drive conversions, and maintain ongoing communication. This direct marketing channel allows businesses to deliver personalized content, promotions, and updates directly to interested audiences who have opted to receive communications.</p>
+          <p>Businesses use email marketing to nurture leads, retain customers, promote products or services, share valuable content, and drive repeat business. Effective email strategies focus on providing value, personalization, and timely messaging while respecting subscriber preferences and privacy regulations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What the Service Includes -->
+    <section class="service-includes">
+      <div class="container">
+        <h2 class="section-title centered">What the Service Includes</h2>
+        <div class="includes-grid">
+          <div class="include-item">
+            <h3>Email Campaigns</h3>
+            <p>Campaign strategy, content creation, design development, list segmentation, and performance tracking for targeted email communications.</p>
+          </div>
+          <div class="include-item">
+            <h3>Marketing Automation</h3>
+            <p>Automated workflow setup, trigger-based emails, behavioral targeting, and personalized customer journey mapping.</p>
+          </div>
+          <div class="include-item">
+            <h3>Newsletter Marketing</h3>
+            <p>Regular newsletter creation, content curation, subscriber engagement strategies, and open rate optimization.</p>
+          </div>
+          <div class="include-item">
+            <h3>Lead Nurturing Sequences</h3>
+            <p>Drip campaign development, progressive profiling, educational content delivery, and conversion-focused email series.</p>
+          </div>
+          <div class="include-item">
+            <h3>Customer Retention Campaigns</h3>
+            <p>Loyalty program communications, re-engagement campaigns, customer appreciation emails, and retention-focused messaging.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="col">
+          <h4>Company</h4>
+          <p>Building innovative solutions that drive business growth and transform digital experiences for our clients worldwide.</p>
+        </div>
+
+        <div class="col">
+          <h4>Quick Links</h4>
+          <ul class="plain-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-page">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact Info</h4>
+          <p>Mumbai<br/>+91 810499999<br/>genovia29@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

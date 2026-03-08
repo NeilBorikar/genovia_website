@@ -174,6 +174,77 @@ body{
 }
 .nav-link:hover{ background: rgba(0,0,0,0.03) }
 
+/* Dropdown Navigation */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-toggle::after {
+  content: '▾';
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--card);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: var(--soft-shadow);
+  min-width: 220px;
+  z-index: 1000;
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--accent);
+}
+
+/* Dark mode dropdown styles */
+body.dark-mode .dropdown-menu {
+  background: var(--card);
+  border-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .dropdown-item {
+  color: var(--accent);
+}
+
+body.dark-mode .dropdown-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+
 /* Buttons */
 .btn{
   font-weight:700;
@@ -401,5 +472,238 @@ body{
 @media (max-width:760px){
   .feature-grid{
     grid-template-columns: 1fr;  /* 1 card per row on mobile */
+  }
+}
+
+/* Services Page Styles */
+.page-header {
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+.page-title {
+  font-family: "Poppins", "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 48px;
+  margin: 0 0 16px;
+  color: var(--accent);
+}
+
+.page-subtitle {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.services-page {
+  padding: 40px 0 80px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-item {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: var(--soft-shadow);
+  text-align: center;
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.service-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.service-item-link:hover .service-item {
+  transform: translateY(-6px);
+  box-shadow: var(--strong-shadow);
+}
+
+.service-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.service-item h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 12px;
+  color: var(--accent);
+}
+
+.service-item p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Dark mode styles for services page */
+body.dark-mode .service-item {
+  background: var(--card);
+  color: var(--accent);
+}
+
+body.dark-mode .service-item h3 {
+  color: var(--accent);
+}
+
+body.dark-mode .service-item p {
+  color: var(--muted);
+}
+
+/* Responsive design for services page */
+@media (max-width: 760px) {
+  .page-title {
+    font-size: 36px;
+  }
+  
+  .page-subtitle {
+    font-size: 16px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-item {
+    padding: 24px 20px;
+  }
+}
+
+/* Service Detail Page Styles */
+.service-overview {
+  padding: 60px 0;
+}
+
+.service-overview .card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: var(--soft-shadow);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-overview .card h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0 0 20px;
+  color: var(--accent);
+}
+
+.service-overview .card p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.service-overview .card p:last-child {
+  margin-bottom: 0;
+}
+
+.service-includes {
+  padding: 60px 0;
+}
+
+.includes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.include-item {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: var(--soft-shadow);
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.include-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--strong-shadow);
+}
+
+.include-item h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 16px;
+  color: var(--accent);
+}
+
+.include-item p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Dark mode styles for service detail pages */
+body.dark-mode .service-overview .card {
+  background: var(--card);
+  color: var(--accent);
+}
+
+body.dark-mode .service-overview .card h2 {
+  color: var(--accent);
+}
+
+body.dark-mode .service-overview .card p {
+  color: var(--muted);
+}
+
+body.dark-mode .include-item {
+  background: var(--card);
+  color: var(--accent);
+}
+
+body.dark-mode .include-item h3 {
+  color: var(--accent);
+}
+
+body.dark-mode .include-item p {
+  color: var(--muted);
+}
+
+/* Responsive design for service detail pages */
+@media (max-width: 760px) {
+  .service-overview .card {
+    padding: 30px 24px;
+  }
+  
+  .service-overview .card h2 {
+    font-size: 28px;
+  }
+  
+  .service-overview .card p {
+    font-size: 16px;
+  }
+  
+  .includes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .include-item {
+    padding: 24px 20px;
   }
 }

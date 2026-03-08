@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Genovia — Influencer Marketing</title>
+
+  <!-- Google Fonts (heading + body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo">
+         <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-link dropdown-toggle">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/seo" class="dropdown-item">SEO Services</a>
+            <a href="/services/paid-advertising" class="dropdown-item">Paid Advertising</a>
+            <a href="/services/social-media-marketing" class="dropdown-item">Social Media Marketing</a>
+            <a href="/services/content-marketing" class="dropdown-item">Content Marketing</a>
+            <a href="/services/influencer-marketing" class="dropdown-item">Influencer Marketing</a>
+            <a href="/services/email-marketing" class="dropdown-item">Email Marketing</a>
+            <a href="/services/branding" class="dropdown-item">Branding</a>
+            <a href="/services/website-development" class="dropdown-item">Website Development</a>
+            <a href="/services/conversion-rate-optimization" class="dropdown-item">Conversion Rate Optimization</a>
+            <a href="/services/marketing-strategy-consulting" class="dropdown-item">Marketing Strategy & Consulting</a>
+          </div>
+        </div>
+        <a href="/contact-page" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+         <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
+         <a href="#start" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL PAGE -->
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Influencer Marketing</h1>
+        <p class="page-subtitle">Collaboration with content creators to reach targeted audiences through authentic partnerships and trusted recommendations.</p>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="card">
+          <h2>What Influencer Marketing Involves</h2>
+          <p>Influencer Marketing leverages individuals with established credibility and engaged followings to promote products, services, or brand messages to their audiences. This approach focuses on authentic partnerships where influencers create content that naturally incorporates brand offerings while maintaining their unique voice and relationship with followers.</p>
+          <p>Businesses use influencer marketing to reach niche audiences, build brand credibility through trusted voices, generate authentic content, and drive engagement through relatable recommendations. Effective influencer campaigns prioritize alignment between brand values and influencer audience demographics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What the Service Includes -->
+    <section class="service-includes">
+      <div class="container">
+        <h2 class="section-title centered">What the Service Includes</h2>
+        <div class="includes-grid">
+          <div class="include-item">
+            <h3>Influencer Outreach</h3>
+            <p>Identification and vetting of relevant influencers, relationship building, negotiation of partnerships, and contract management.</p>
+          </div>
+          <div class="include-item">
+            <h3>Campaign Planning</h3>
+            <p>Strategic campaign development, goal setting, content brief creation, timeline management, and campaign coordination.</p>
+          </div>
+          <div class="include-item">
+            <h3>Influencer Analytics</h3>
+            <p>Performance tracking, audience analysis, engagement metrics, ROI measurement, and campaign effectiveness reporting.</p>
+          </div>
+          <div class="include-item">
+            <h3>Brand Collaborations</h3>
+            <p>Partnership strategy, content guidelines, brand safety monitoring, and long-term relationship development with influencers.</p>
+          </div>
+          <div class="include-item">
+            <h3>Product Promotion Campaigns</h3>
+            <p>Product seeding campaigns, review content creation, unboxing videos, testimonial development, and product showcase strategies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="col">
+          <h4>Company</h4>
+          <p>Building innovative solutions that drive business growth and transform digital experiences for our clients worldwide.</p>
+        </div>
+
+        <div class="col">
+          <h4>Quick Links</h4>
+          <ul class="plain-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-page">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact Info</h4>
+          <p>Mumbai<br/>+91 810499999<br/>genovia29@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
