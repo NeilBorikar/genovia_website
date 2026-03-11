@@ -35,7 +35,7 @@
         <td>{{ c[4] }}</td>
         <td>{{ c[5] }}</td>
         <td>
-          <button onclick="deleteContact({{ c[0] }})" class="btn btn-primary">
+          <button onclick="deleteContact(this)" data-id="{{ c[0] }}" class="btn btn-primary">
             Delete
           </button>
         </td>
@@ -46,17 +46,19 @@
 </div>
 
 <script>
-async function deleteContact(id){
+ function deleteContact(btn){
+  const id = btn.getAttribute("data-id");
+
   if(!confirm("Delete this request?")) return;
 
-  const res = await fetch(`/delete/${id}`, {
+  fetch(`/delete/${id}`, {
     method: "POST"
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message);
+    location.reload();
   });
-
-  const data = await res.json();
-  alert(data.message);
-
-  location.reload(); // refresh page
 }
 </script>
 

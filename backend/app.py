@@ -63,6 +63,14 @@ def service_conversion_rate_optimization():
 def service_marketing_strategy_consulting():
     return render_template("service-marketing-strategy-consulting.html")
 
+@app.route("/products")
+def products():
+    return render_template("products.html")
+
+@app.route("/products/nexus")
+def product_nexus():
+    return render_template("product-nexus.html")
+
 
 # ---------- CONTACT API ----------
 @app.route("/contact", methods=["POST"])

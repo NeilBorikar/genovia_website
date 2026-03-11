@@ -3,12 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Genovia — Conversion Rate Optimization</title>
+  <title>Genovia — Products</title>
 
   <!-- Google Fonts (heading + body) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <style>
+    /* Products Grid - Center single product */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- NAV -->
@@ -50,52 +72,30 @@
     </div>
   </header>
 
-  <!-- SERVICE DETAIL PAGE -->
+  <!-- PRODUCTS PAGE -->
   <main>
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-title">Conversion Rate Optimization</h1>
-        <p class="page-subtitle">Improving website experiences to increase user actions such as sign-ups or purchases through data-driven optimization.</p>
+        <h1 class="page-title">Our Products</h1>
+        <p class="page-subtitle">Innovative solutions designed to elevate your business and drive growth with cutting-edge technology and strategic tools.</p>
       </div>
     </section>
 
-    <!-- Overview Section -->
-    <section class="service-overview">
+    <!-- Products Grid -->
+    <section class="services-page">
       <div class="container">
-        <div class="card">
-          <h2>What Conversion Rate Optimization Involves</h2>
-          <p>Conversion Rate Optimization (CRO) focuses on improving the percentage of website visitors who complete desired actions, such as making purchases, filling out forms, or signing up for services. This systematic approach uses data analysis, user behavior insights, and testing methodologies to enhance website effectiveness.</p>
-          <p>Businesses use CRO to maximize the value of existing traffic, improve user experience, increase revenue without increasing ad spend, and gain deeper insights into customer behavior. Effective optimization combines qualitative user feedback with quantitative data to drive meaningful improvements.</p>
-        </div>
-      </div>
-    </section>
+        <div class="services-grid" style="max-width: 100%; margin: 0 auto;">
+          
+          <!-- Nexus Product -->
+          <a href="/products/nexus" class="service-item-link">
+            <article id="nexus-product" class="service-item hover-scale">
+              <div class="service-icon">⚡</div>
+              <h3>Nexus</h3>
+              <p>A comprehensive platform designed to connect and optimize your entire business ecosystem with intelligent automation and real-time insights.</p>
+            </article>
+          </a>
 
-    <!-- What the Service Includes -->
-    <section class="service-includes">
-      <div class="container">
-        <h2 class="section-title centered">What the Service Includes</h2>
-        <div class="includes-grid">
-          <div class="include-item">
-            <h3>Landing Page Optimization</h3>
-            <p>Headline testing, call-to-action improvements, layout optimization, form reduction, and persuasive element placement.</p>
-          </div>
-          <div class="include-item">
-            <h3>A/B Testing</h3>
-            <p>Hypothesis creation, variant development, statistical analysis, multivariate testing, and winner implementation.</p>
-          </div>
-          <div class="include-item">
-            <h3>User Experience Improvements</h3>
-            <p>Navigation optimization, mobile experience enhancement, page flow analysis, friction point identification, and usability improvements.</p>
-          </div>
-          <div class="include-item">
-            <h3>Heatmap Analysis</h3>
-            <p>Click tracking, scroll depth analysis, attention heatmaps, user session recordings, and behavior pattern identification.</p>
-          </div>
-          <div class="include-item">
-            <h3>Conversion Tracking</h3>
-            <p>Goal setup, event tracking, funnel analysis, conversion path mapping, and performance measurement implementation.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -114,13 +114,14 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/services">Services</a></li>
+            <li><a href="/products">Products</a></li>
             <li><a href="/contact-page">Contact Us</a></li>
           </ul>
         </div>
 
         <div class="col">
           <h4>Contact Info</h4>
-          <p>Mumbai<br/>+91 810499999<br/>genovia29@gmail.com</p>
+          <p>Thane<br/>8452976481<br/>genoviasolutions@gmail.com</p>
         </div>
       </div>
     </footer>
