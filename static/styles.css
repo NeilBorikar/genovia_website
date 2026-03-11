@@ -106,6 +106,72 @@ body.dark-mode .dark-mode-toggle:hover {
   color: #333;
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 6px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+  height: 16px;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  content: '';
+}
+
+.hamburger::after {
+  content: '';
+}
+
+/* Active hamburger animation */
+.mobile-menu-btn.active .hamburger::before {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-btn.active .hamburger {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger::after {
+  transform: rotate(-45deg) translate(-8px, -8px);
+}
+
 /* reset */
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -483,7 +549,22 @@ body.dark-mode .dropdown-item:hover {
 
 @media (max-width:900px){
   .container{ padding: 0 20px; }
-  .main-nav{ display:none }
+  .mobile-menu-btn { display: flex; }
+  .main-nav { 
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--card);
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 99;
+    box-shadow: var(--soft-shadow);
+  }
+  .main-nav.active { display: flex; }
   .actions{ gap: 8px; }
   .hero-grid{ grid-template-columns: 1fr; gap:22px; text-align:center }
   .hero-title{ font-size:48px; line-height: 1.1; }
@@ -504,10 +585,32 @@ body.dark-mode .dropdown-item:hover {
   .container{ padding: 0 16px; }
   
   /* Header adjustments */
-  .nav-inner{ flex-direction: column; gap: 12px; padding: 12px 0; }
+  .nav-inner{ display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
   .logo-img { height: 48px; }
-  .actions { gap: 8px; width: 100%; justify-content: center; }
+  .actions { gap: 8px; justify-content: flex-end; }
   .btn-pill { padding: 8px 14px; font-size: 14px; }
+  
+  /* Mobile nav adjustments */
+  .main-nav {
+    top: 72px !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-height: calc(100vh - 72px) !important;
+    overflow-y: auto !important;
+  }
+  
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    display: none;
+    background: rgba(0,0,0,0.02);
+    border-radius: 8px;
+    margin: 8px 0 0 16px;
+    min-width: auto;
+  }
+  
+  .nav-dropdown.active .dropdown-menu {
+    display: block;
+  }
   
   /* Hero */
   .hero { padding: 40px 0 20px; }

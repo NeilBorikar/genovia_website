@@ -768,7 +768,7 @@
       <div class="logo">
          <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Genovia Logo" class="logo-img">
       </div>
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About</a>
         <div class="nav-dropdown">
@@ -794,6 +794,9 @@
         </div>
         <a href="/contact-page" class="nav-link">Contact</a>
       </nav>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" title="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
       <div class="actions">
          <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
          <a href="#contact" class="btn btn-pill btn-primary" id="get-started">Get Started</a>

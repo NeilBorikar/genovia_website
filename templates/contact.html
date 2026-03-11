@@ -353,7 +353,7 @@
         <img src="{{ url_for('static', filename='assets/logo.png') }}" class="logo-img">
       </div>
 
-    <nav>
+    <nav id="main-nav">
       <a href="/">Home</a>
       <a href="/about">About</a>
       <div class="nav-dropdown">
@@ -379,6 +379,10 @@
       </div>
       <a href="/contact-page">Contact</a>
     </nav>
+
+    <button class="mobile-menu-btn" id="mobile-menu-btn" title="Toggle menu">
+      <span class="hamburger"></span>
+    </button>
 
     <div class="header-actions">
       <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>

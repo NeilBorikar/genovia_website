@@ -28,6 +28,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mainNav = document.getElementById('main-nav');
+  
+  if (mobileMenuBtn && mainNav) {
+    mobileMenuBtn.addEventListener('click', function () {
+      mobileMenuBtn.classList.toggle('active');
+      mainNav.classList.toggle('active');
+    });
+    
+    // Close menu when a nav link is clicked
+    const navLinks = mainNav.querySelectorAll('.nav-link, .dropdown-item');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        mobileMenuBtn.classList.remove('active');
+        mainNav.classList.remove('active');
+      });
+    });
+  }
+  
   // Smooth scroll for nav and CTAs
   document.querySelectorAll('a[href^="#"], button[data-scroll-target]').forEach(function (el) {
     el.addEventListener('click', function (e) {
