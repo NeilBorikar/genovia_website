@@ -3,19 +3,32 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Dark Mode Toggle
   const darkModeBtn = document.getElementById('dark-mode-btn');
+  function updateLogo() {
+  const logo = document.getElementById('site-logo');
+  if (!logo) return;
+
+  if (document.body.classList.contains('dark-mode')) {
+    logo.src = "/static/assets/logo-dark.png";
+  } else {
+    logo.src = "/static/assets/logo-light.png";
+  }
+}
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
   
   if (isDarkMode) {
     document.body.classList.add('dark-mode');
+    if (darkModeBtn) {
     darkModeBtn.classList.remove('light');
     darkModeBtn.classList.add('dark');
     darkModeBtn.textContent = '☀️';
-  }
-  
+  }}
+  updateLogo();
+  if (darkModeBtn) {
   darkModeBtn.addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDark);
+    updateLogo();
     
     if (isDark) {
       darkModeBtn.classList.remove('light');
@@ -27,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       darkModeBtn.textContent = '🌙';
     }
   });
+}
   
   // Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');

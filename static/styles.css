@@ -14,8 +14,8 @@
 
 /* Dark Mode Variables */
 body.dark-mode {
-  --bg: #121212;         /* dark background */
-  --card: #1e1e1e;       /* dark card background */
+  --bg: #000000;         /* dark background */
+  --card: #111111; /* slightly lighter for depth */       /* dark card background */
   --muted: #a0a0a0;      /* light grey text */
   --accent: #ffffff;     /* white text */
   --soft-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -23,9 +23,10 @@ body.dark-mode {
 }
 
 body.dark-mode .site-header {
-  background: rgba(18,18,18,0.95);
-  border-bottom-color: rgba(255,255,255,0.1);
+   background: #000000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+
 
 body.dark-mode .nav-link:hover {
   background: rgba(255,255,255,0.1);
@@ -214,8 +215,13 @@ body{
   letter-spacing:-0.5px;
 }
 .logo-img {
-  height: 54px;       /* keeps logo the same visual scale as original text logo */
+  height: 54px; 
+  transition: all 0.3s ease;      /* keeps logo the same visual scale as original text logo */
   display: block;
+}
+
+body.dark-mode .logo-img {
+  filter: brightness(1.2) contrast(1.1);
 }
 
 .logo-tag {
