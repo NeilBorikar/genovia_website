@@ -71,6 +71,10 @@ def products():
 def product_nexus():
     return render_template("product-nexus.html")
 
+@app.route("/products/guardian-band")
+def product_guardian_band():
+    return render_template("product-guardian-band.html")
+
 
 # ---------- CONTACT API ----------
 @app.route("/contact", methods=["POST"])

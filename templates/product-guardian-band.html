@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Genovia — Guardian Band Product</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@6..60,700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <style>
+    .nexus-hero {
+      min-height: 85vh;
+      background: linear-gradient(135deg, var(--card) 0%, var(--accent-beige) 100%);
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nexus-hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(79, 172, 254, 0.1) 0%, rgba(79, 172, 254, 0) 70%);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+    }
+
+    .nexus-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .nexus-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 64px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      color: var(--black);
+      line-height: 1.2;
+    }
+
+    .nexus-hero p {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 30px 0;
+      line-height: 1.6;
+    }
+
+    .nexus-ctas {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nexus-features,
+    .how-it-works,
+    .benefits-section {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .benefits-section {
+      background: linear-gradient(135deg, var(--card) 0%, var(--accent-beige) 100%);
+    }
+
+    .features-grid,
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .feature-card,
+    .step-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid rgba(79, 172, 254, 0.12);
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover,
+    .step-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(79, 172, 254, 0.15);
+      border-color: rgba(79, 172, 254, 0.3);
+    }
+
+    .feature-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .nexus-cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      text-align: center;
+      border-radius: 30px;
+      margin-top: 80px;
+    }
+
+    .nexus-cta h2 {
+      font-size: 44px;
+      margin: 0 0 20px 0;
+      color: white;
+    }
+
+    .nexus-cta p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      .nexus-hero {
+        min-height: 55vh;
+        text-align: center;
+        padding: 36px 0;
+      }
+
+      .nexus-hero h1 {
+        font-size: 38px;
+      }
+
+      .nexus-hero p {
+        font-size: 15px;
+      }
+
+      .nexus-ctas {
+        justify-content: center;
+      }
+
+      .features-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nexus-features,
+      .how-it-works,
+      .benefits-section {
+        padding: 60px 0;
+      }
+
+      .nexus-cta h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img
+          src="{{ url_for('static', filename='assets/logo-light.png') }}"
+          class="logo-img"
+          id="site-logo"
+          alt="Genovia Logo"
+        >
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-link dropdown-toggle">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/seo" class="dropdown-item">SEO Services</a>
+            <a href="/services/paid-advertising" class="dropdown-item">Paid Advertising</a>
+            <a href="/services/social-media-marketing" class="dropdown-item">Social Media Marketing</a>
+            <a href="/services/content-marketing" class="dropdown-item">Content Marketing</a>
+            <a href="/services/influencer-marketing" class="dropdown-item">Influencer Marketing</a>
+            <a href="/services/email-marketing" class="dropdown-item">Email Marketing</a>
+            <a href="/services/branding" class="dropdown-item">Branding</a>
+            <a href="/services/website-development" class="dropdown-item">Website Development</a>
+            <a href="/services/conversion-rate-optimization" class="dropdown-item">Conversion Rate Optimization</a>
+            <a href="/services/marketing-strategy-consulting" class="dropdown-item">Marketing Strategy & Consulting</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="/products" class="nav-link dropdown-toggle">Products</a>
+          <div class="dropdown-menu">
+            <a href="/products/nexus" class="dropdown-item">Nexus</a>
+            <a href="/products/guardian-band" class="dropdown-item">Guardian Band</a>
+          </div>
+        </div>
+        <a href="/contact-page" class="nav-link">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" title="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      <div class="actions">
+        <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
+        <a href="#contact" class="btn btn-pill btn-primary" id="get-started">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="nexus-hero">
+      <div class="container">
+        <div class="nexus-hero-content">
+          <h1>Guardian Band</h1>
+          <p>
+            Guardian Band is a women safety app connected with a dedicated hardware chip. With a single button press, SOS is sent instantly to emergency contacts along with live location, and it is designed to work even when the mobile is switched off.
+          </p>
+          <div class="nexus-ctas">
+            <a href="#contact" class="btn btn-primary">Get Started</a>
+            <a href="#features" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nexus-features" id="features">
+      <div class="container">
+        <h2 class="section-title centered">Core Safety Features</h2>
+        <p class="lead centered" style="margin-top: 15px;">Fast response, reliable alerts, and always-on protection.</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🆘</div>
+            <h3>One-Press SOS</h3>
+            <p>Trigger emergency alerts instantly using the button on the Guardian hardware chip.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">👨‍👩‍👧</div>
+            <h3>Emergency Contact Alerts</h3>
+            <p>Configured emergency contacts receive immediate SOS notifications when help is needed.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Live Location Sharing</h3>
+            <p>Location details are shared in real time, making it easier for family and responders to act quickly.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h3>Works Even Without Phone Power</h3>
+            <p>The hardware-based emergency trigger is built for reliability even when the mobile is switched off.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="section-title centered">How Guardian Band Works</h2>
+        <p class="lead centered" style="margin-top: 15px;">Simple setup and instant emergency activation.</p>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Add Trusted Contacts</h4>
+            <p>Set up emergency contacts in the app to define who should be alerted first.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Pair Hardware Chip</h4>
+            <p>Connect the wearable safety chip for quick, one-button SOS activation.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Press in Emergency</h4>
+            <p>On button press, SOS and live location are automatically sent to your contacts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title centered">Why Guardian Band</h2>
+        <div style="max-width: 760px; margin: 50px auto 0;">
+          <div class="feature-card" style="margin-bottom: 20px;">
+            <h3>Built for Real Emergencies</h3>
+            <p>Guardian Band focuses on immediate signal delivery so that help requests are not delayed.</p>
+          </div>
+          <div class="feature-card" style="margin-bottom: 20px;">
+            <h3>Designed for Everyday Use</h3>
+            <p>A lightweight setup that fits daily routine while staying ready in critical moments.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Peace of Mind for Families</h3>
+            <p>Family members stay informed with timely alerts and live location updates during emergencies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="nexus-cta">
+        <h2>Ready to feel safer every day?</h2>
+        <p>Start using Guardian Band for rapid SOS alerts and trusted emergency support.</p>
+        <a href="#contact" class="btn btn-primary" style="background: white; color: #4facfe;">Request a Demo</a>
+      </div>
+    </section>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="col">
+          <h4>Company</h4>
+          <p>Building innovative solutions that drive business growth and transform digital experiences for our clients worldwide.</p>
+        </div>
+        <div class="col">
+          <h4>Quick Links</h4>
+          <ul class="plain-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/contact-page">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Contact Info</h4>
+          <p>Thane<br/>8452976481<br/>genoviasolutions@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
