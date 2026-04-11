@@ -37,11 +37,13 @@
   <header class="site-header">
     <div class="container nav-inner">
 <div class="logo">
-         <img 
-          src="{{ url_for('static', filename='assets/logo-light.png') }}" 
+         <img
+          src="{{ url_for('static', filename='assets/logo-light.png') }}"
           class="logo-img"
           id="site-logo"
           alt="Genovia Logo"
+          data-logo-light="{{ url_for('static', filename='assets/logo-light.png') }}"
+          data-logo-dark="{{ url_for('static', filename='assets/logo-dark.png') }}"
           >
       </div>
       <nav class="main-nav" id="main-nav">

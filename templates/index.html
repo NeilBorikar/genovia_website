@@ -15,11 +15,13 @@
   <header class="site-header">
     <div class="container nav-inner">
       <div class="logo">
-         <img 
-          src="{{ url_for('static', filename='assets/logo-light.png') }}" 
+         <img
+          src="{{ url_for('static', filename='assets/logo-light.png') }}"
           class="logo-img"
           id="site-logo"
           alt="Genovia Logo"
+          data-logo-light="{{ url_for('static', filename='assets/logo-light.png') }}"
+          data-logo-dark="{{ url_for('static', filename='assets/logo-dark.png') }}"
           >
       </div>
       <nav class="main-nav" id="main-nav">
@@ -44,6 +46,7 @@
           <a href="/products" class="nav-link dropdown-toggle">Products</a>
           <div class="dropdown-menu">
             <a href="/products/nexus" class="dropdown-item">Nexus</a>
+            <a href="/products/guardian-band" class="dropdown-item">Guardian Band</a>
           </div>
         </div>
         <a href="/contact-page" class="nav-link">Contact</a>

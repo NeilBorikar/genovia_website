@@ -3,33 +3,32 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Dark Mode Toggle
   const darkModeBtn = document.getElementById('dark-mode-btn');
-  function updateLogo() {
-  const logo = document.getElementById('site-logo');
-  if (!logo) return;
 
-  if (document.body.classList.contains('dark-mode')) {
-    logo.src = "/static/assets/logo-dark.png";
-  } else {
-    logo.src = "/static/assets/logo-light.png";
-  }
-}
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
-  
-  if (isDarkMode) {
-    document.body.classList.add('dark-mode');
-    if (darkModeBtn) {
-    darkModeBtn.classList.remove('light');
-    darkModeBtn.classList.add('dark');
-    darkModeBtn.textContent = '☀️';
-  }}
-  updateLogo();
-  if (darkModeBtn) {
-  darkModeBtn.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
+  function updateLogo() {
+    const logo = document.getElementById('site-logo');
+    if (!logo) return;
     const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDark);
-    updateLogo();
-    
+    const fromData = isDark ? logo.dataset.logoDark : logo.dataset.logoLight;
+    if (fromData) {
+      logo.setAttribute('src', fromData);
+      return;
+    }
+    try {
+      const u = new URL(logo.getAttribute('src') || '', window.location.href);
+      if (isDark) {
+        u.pathname = u.pathname.replace(/logo-light\.png$/i, 'logo-dark.png');
+      } else {
+        u.pathname = u.pathname.replace(/logo-dark\.png$/i, 'logo-light.png');
+      }
+      logo.src = u.href;
+    } catch (e) {
+      logo.src = isDark ? '/static/assets/logo-dark.png' : '/static/assets/logo-light.png';
+    }
+  }
+
+  function syncDarkModeToggle() {
+    if (!darkModeBtn) return;
+    const isDark = document.body.classList.contains('dark-mode');
     if (isDark) {
       darkModeBtn.classList.remove('light');
       darkModeBtn.classList.add('dark');
@@ -39,8 +38,25 @@ document.addEventListener('DOMContentLoaded', function () {
       darkModeBtn.classList.add('light');
       darkModeBtn.textContent = '🌙';
     }
-  });
-}
+  }
+
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+  }
+  syncDarkModeToggle();
+  updateLogo();
+
+  if (darkModeBtn) {
+    darkModeBtn.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      syncDarkModeToggle();
+      updateLogo();
+    });
+  }
   
   // Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -115,14 +131,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // tiny: active nav on scroll
+  // Active nav on scroll (hash targets only — avoids invalid querySelector for paths like /about)
   const navLinks = document.querySelectorAll('.nav-link');
-  const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
-  function updateNavActive(){
-    let idx = sections.findIndex(sec => sec && (window.scrollY + 120) >= sec.offsetTop);
-    navLinks.forEach(l=>l.classList.remove('active'));
+  const sections = Array.from(navLinks).map((a) => {
+    const href = a.getAttribute('href');
+    if (!href || href === '#' || href.charAt(0) !== '#') return null;
+    try {
+      return document.querySelector(href);
+    } catch (e) {
+      return null;
+    }
+  });
+  function updateNavActive() {
+    const idx = sections.findIndex((sec) => sec && window.scrollY + 120 >= sec.offsetTop);
+    navLinks.forEach((l) => l.classList.remove('active'));
     if (idx >= 0) navLinks[idx].classList.add('active');
   }
-  window.addEventListener('scroll', updateNavActive);
-  updateNavActive();
+  if (sections.some(Boolean)) {
+    window.addEventListener('scroll', updateNavActive);
+    updateNavActive();
+  }
 });

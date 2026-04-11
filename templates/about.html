@@ -18,17 +18,19 @@
     <div class="container nav-inner">
 
       <div class="logo">
-      <img 
-      id="site-logo"
-       src="{{ url_for('static', filename='assets/logo-light.png') }}"
-        class="logo-img"
-        alt="Genovia Logo">
-        
+        <img
+          src="{{ url_for('static', filename='assets/logo-light.png') }}"
+          class="logo-img"
+          id="site-logo"
+          alt="Genovia Logo"
+          data-logo-light="{{ url_for('static', filename='assets/logo-light.png') }}"
+          data-logo-dark="{{ url_for('static', filename='assets/logo-dark.png') }}"
+        >
       </div>
 
       <nav class="main-nav" id="main-nav">
         <a href="/" class="nav-link">Home</a>
-        <a href="/about">About Us</a>
+        <a href="/about" class="nav-link">About Us</a>
         <div class="nav-dropdown">
           <a href="/services" class="nav-link dropdown-toggle">Services</a>
           <div class="dropdown-menu">
@@ -48,16 +50,17 @@
           <a href="/products" class="nav-link dropdown-toggle">Products</a>
           <div class="dropdown-menu">
             <a href="/products/nexus" class="dropdown-item">Nexus</a>
+            <a href="/products/guardian-band" class="dropdown-item">Guardian Band</a>
           </div>
         </div>
-        <a href="/contact-page">Contact Us</a>
+        <a href="/contact-page" class="nav-link">Contact</a>
       </nav>
       <button class="mobile-menu-btn" id="mobile-menu-btn" title="Toggle menu">
         <span class="hamburger"></span>
       </button>
       <div class="actions">
-         <button class=\"dark-mode-toggle light\" id=\"dark-mode-btn\" title=\"Toggle dark mode\">🌙</button>
-         <a href=\"/contact-page\" class=\"btn btn-pill btn-primary\">Get Started</a>
+        <button class="dark-mode-toggle light" id="dark-mode-btn" title="Toggle dark mode">🌙</button>
+        <a href="/contact-page" class="btn btn-pill btn-primary">Get Started</a>
       </div>
 
     </div>
